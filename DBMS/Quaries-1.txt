@@ -1,0 +1,22 @@
+1.
+select film.title from film JOIN film_category ON film.film_id = film_category.film_id where film.rating = "PG-13" and film_category.category_id = "5";
+
+
+2.
+SELECT film_list.title, count(rental.inventory_id) as count from film_list join inventory ON film_list.fid = inventory.film_id JOIN rental ON inventory.inventory_id = rental.inventory_id where film_list.category = "horror" GROUP BY film_list.title ORDER BY count desc limit 3;
+
+
+3.
+select first_name, last_name,film_list.category, country.country from customer JOIN address ON customer.address_id = address.address_id JOIN city ON address.city_id = city.city_id JOIN country ON city.country_id = country.country_id JOIN rental ON rental.customer_id = customer.customer_id JOIN inventory ON rental.inventory_id = inventory.inventory_id JOIN film_list ON film_list.fid = inventory.film_id  where country = "India" and film_list.category = "Sports"; 
+
+
+4.
+select customer.first_name, customer.last_name, country.country, actor.first_name,actor.last_name from customer JOIN address ON customer.address_id = address.address_id JOIN city ON address.city_id = city.city_id JOIN country ON city.country_id = country.country_id JOIN rental ON customer.customer_id = rental.customer_id JOIN inventory ON inventory.inventory_id = rental.inventory_id Join film_actor ON film_actor.film_id = inventory.film_id JOIN actor ON film_actor.actor_id = actor.actor_id where country.country = "Canada" and actor.first_name = "NICK" and actor.last_name = "WAHLBERG"; 
+
+
+
+5.
+select COUNT(film_id)as countaboutfilms from film_actor JOIN actor ON film_actor.actor_id = actor.actor_id where actor.first_name = "SEAN" and actor.last_name = "WILLIAMS";
+
+
+
