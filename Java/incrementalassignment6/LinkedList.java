@@ -57,16 +57,6 @@ class SlistIterator<T> {
     }
 
 
-    /*public void printList() {
-        StringBuilder sb = new StringBuilder();
-        current = head;
-        while (current != null) {
-            sb.append(current.data).append(" ");
-            current = current.next;
-        }
-        System.out.println(sb.toString());
-    }*/
-
 
     public void remove() {
         if (head == null)
@@ -93,7 +83,6 @@ public class LinkedList {
         System.out.println(list);
         it.remove();
         it.remove();
-        //list.printList();
         System.out.println(list);
 
     }

@@ -1,7 +1,14 @@
 package incermentalassignment7;
 
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.HashMap;
+import java.io.File;
 
 public class CharacterCount {
     public static void main(String[] args) {
@@ -10,9 +17,9 @@ public class CharacterCount {
         String fileName = args[0];
         BufferedReader br = null;
         FileReader fr = null;
-        try {
 
-            //br = new BufferedReader(new FileReader(FILENAME));
+        //reading string from the file and putting the chracters and their counts on the hashmap.
+        try {
             fr = new FileReader(fileName);
             br = new BufferedReader(fr);
             String str;
@@ -43,6 +50,7 @@ public class CharacterCount {
                 e.printStackTrace();
             }
 
+            //writing from the hashmap to a different file.
 
             try {
                 File newFile = new File("/home/user/Documents/CharCount.txt");

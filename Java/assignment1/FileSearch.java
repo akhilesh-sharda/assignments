@@ -20,7 +20,7 @@ public class FileSearch {
         File[] files = dir.listFiles();
 
         for (File file : files) {
-            //System.out.println(file.getName());
+            //matching the pattern with the files. If pattern matches printing the path.
             if (file.isFile()) {
                 if (p.matcher(file.getName()).matches()) {
                     System.out.println(file.getAbsolutePath());
